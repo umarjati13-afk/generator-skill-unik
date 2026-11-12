@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Generator Skill</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="kotak-mesin">
+            <h1>Generator Skill Unik</h1>
+
+            <p>
+             Masukkan Namamu Untuk
+             melihat skill tersembunyimu!   
+            </p>
+
+            <input
+             type="text"
+             id="namainput"
+             placeholder="Ketik Namamu..."
+            >
+            <button onclick="cekSkill()">
+                Cek Sekarang!
+            </button>
+            
+            <h2 id="hasilSkill">
+                Skill belum terdeteksi... 
+            </h2>
+            <img
+                id="fotoSkill"
+                src="https://placehold.co/200x300?text=?"
+                width="400"
+                >
+        </div>
+        <script>
+            function cekSkill() {
+            let nama = document.getElementById("namainput").value;
+            let daftarSkill = [
+                "Ngantukan",
+                "Radar Wifi",
+                "Antena Tinggi",
+                "Rayap Besi",
+                "Otak Emas"
+            ];
+
+            let daftarGambar = [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbzkXdj8A4rdu1vyMizIs0FcAobujRWqhqCQ7Zi8W1hA&s=10",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb6xVnVCNqUAo537-tZjVzzGz0gRGnH2ZWuvlmK1uozA&s=10",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjCLsK6ncirka8p-Ya_LIURiLLnxI3RpvcXOm-k3ibNg&s=10",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBURMrTF1Cm7UPmOLaQMBhqK8P2zd46JCPiiIUwLU8Ig&s=10",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPOBTUrfS7xpqyckT1FZKoJZqLP40zGUYqnjeuuuGA7Q&s=10",
+            ];
+            let acak = Math.floor(Math.random()* daftarSkill.length);
+            let skillPilihan = daftarSkill[acak];
+            let gambarPilihan = daftarGambar[acak];
+            document.getElementById("hasilSkill").innerText =
+             nama + ",skill unikmu:" + skillPilihan;
+            
+             document.getElementById("fotoSkill").src = gambarPilihan;
+            }    
+        </script>
+    </body>
+</html>
